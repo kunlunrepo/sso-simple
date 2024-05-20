@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>SSO服务端</title>
+</head>
+<body>
+  <h1>SSO服务端登录页面</h1>
+    <form action="/ssoLoginPage" method="post">
+      账号:<input type="text" name="userName" ><br/>
+      密码:<input type="password" name="password"><br>
+        <div th:if="${redirectUrl != null}" th:text="${redirectUrl}"></div>
+        <input type="hidden" name="redirectUrl" th:value="${redirectUrl}">
+      <input type="submit" value="登录">
+    </form>
+</body>
+</html>
